@@ -1,11 +1,11 @@
 package base.shop;
 
-import base.Displayed;
+import base.IDisplayed;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Basket implements Displayed {
+public class Basket implements IDisplayed {
     private Map<Product, Integer> container; // Контейнер товаров и их количества
 
     public Basket(Map<Product, Integer> container) {
@@ -64,5 +64,12 @@ public class Basket implements Displayed {
                     ++count, product, number, product.getPrice() * number);
         }
         System.out.printf("ИТОГО: %d руб." + System.lineSeparator(), calculateTotalCost());
+    }
+
+    @Override
+    public String toString() {
+        return "Basket{" +
+                "container=" + container +
+                '}';
     }
 }

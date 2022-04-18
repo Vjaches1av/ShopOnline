@@ -1,6 +1,6 @@
 package base;
 
-public interface Displayed {
+public interface IDisplayed {
 
     void display();
 }

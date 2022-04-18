@@ -5,7 +5,7 @@ import base.shop.Shop;
 
 import java.util.Scanner;
 
-public class UserMenu implements Menu {
+public class UserMenu implements IMenu {
     private static final Scanner SCANNER = new Scanner(System.in);
     private final String[] userActions = {
             "Узнать список доступных товаров",
@@ -24,7 +24,7 @@ public class UserMenu implements Menu {
     }
 
     private User nonNullUser(User user) {
-        return user == null ? new User() : user;
+        return user == null ? new User(null) : user;
     }
 
     public void setUser(User user) {

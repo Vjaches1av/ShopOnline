@@ -1,10 +1,10 @@
 package base.shop;
 
-import base.Displayed;
+import base.IDisplayed;
 
 import java.util.*;
 
-public class Shop implements Displayed {
+public class Shop implements IDisplayed {
     private List<Product> products;
 
     public Shop(List<Product> products) {
@@ -38,26 +38,18 @@ public class Shop implements Displayed {
     public Product getProduct(Product product) {
         if (products.contains(product)) {
             return product;
-        } else {
-            throw new IllegalArgumentException("Товар отсутствует");
-        }
+        } else throw new IllegalArgumentException("Товар отсутствует");
     }
 
     public Product getProduct(int index) {
         index -= 1;
         if (index >= 0 && index < products.size()) {
             return getProduct(products.get(index));
-        } else {
-            throw new IllegalArgumentException("Данная позиция отсутствует");
-        }
+        } else throw new IllegalArgumentException("Данная позиция отсутствует");
     }
 
     public List<Product> getProducts() {
         return products;
-    }
-
-    public int countNumberProducts() {
-        return products.size();
     }
 
     @Override
